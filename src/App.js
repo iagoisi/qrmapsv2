@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Master from './pages/master';
+import CidadeGold01 from './pages/cidade-gold-01';
+import CidadeGold02 from './pages/cidade-gold-02';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/master' element={<Master />}></ Route>
+        <Route path='/cidade-gold-01' element={<CidadeGold01 />}></ Route>
+        <Route path='/cidade-gold-02' element={<CidadeGold02 />}></ Route>
+      </Routes>
+    </BrowserRouter>
+    </>
   );
 }
 
