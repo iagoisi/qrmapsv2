@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as LinkR } from 'react-router-dom';
 
 
 export const MenuMaster = styled.div`
@@ -15,9 +16,9 @@ export const WrapperUl = styled.div`
     display: flex;
 `
 
-export const UlMaster = styled.ul`
+export const UlMaster = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     width: 100%;
     height: 55dvh;
     padding: 20px 25px;
@@ -27,7 +28,7 @@ export const UlMaster = styled.ul`
         width: 0px;
 
 `
-export const LiMaster = styled.li`
+export const LiMaster = styled.div`
     display: flex;
     align-items: center;
     padding: 30px 10px 30px 10px;
@@ -76,31 +77,54 @@ export const ImgButton = styled.img`
     width: 30%;
 `
 
+export const WrapperDiv = styled.div`
+    display: none;
+    width: 100%;
+    justify-content: center;
+
+    &.active {
+        display: flex;
+    }
+    &.inactive { 
+        display: none;
+    }
+
+`
+
 export const DivBusiness = styled.div`
     display: flex;
     width: 90%;
     height: 100%;
     align-self: center;
     justify-content: center;
-    background: blue;
-    `
+    padding: 10px 0 30px 0;
+`
     
     
 export const WrapperList = styled.div`
-    width: 80%;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 `
 
-export const LiDataItem = styled.li`
+export const LiDataItem = styled(LinkR)`
     display: flex;
     width: 48%;
-    height: 100px;
+    height: 200px;
+    flex-direction: column;
     justify-content: center;
     border-radius: 10px;
     background: red;
     align-items: center;
+    margin: 10px 2px;
+    cursor: pointer;
+`
+
+export const ImgLogoItem = styled.img`
+    display: flex;
+    width: 80%;
 `
 
 export const H3Name = styled.h3`

@@ -9,6 +9,7 @@ function App() {
     <>
     <BrowserRouter>
       <Routes>
+        <Route path='/' element={<Master />}></ Route>
         <Route path='/master' element={<Master />}></ Route>
         <Route path='/cidade-gold-01' element={<CidadeGold01 />}></ Route>
         <Route path='/cidade-gold-02' element={<CidadeGold02 />}></ Route>
