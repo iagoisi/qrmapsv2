@@ -32,7 +32,7 @@ export const WrapperButtonBack = styled(LinkR)`
     width: 100%;
 `
 
-export const BackButton = styled.div`
+export const BackButton = styled(LinkR)`
     background: #5EA4FF;
     display: flex;
     width: 50px;
@@ -47,7 +47,6 @@ export const BackButton = styled.div`
         transform: scale(1.1);
         transition: ease-in-out .2s;
     }
-
 `
 
 
@@ -56,16 +55,29 @@ export const ImgBackButton = styled.img`
     width: 100%;
     padding: 5px;
 `
-export const H2TitleBussines = styled.h2`
-    font-size: 50px;
+
+export const WrapperName = styled.div`
     display: flex;
-    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 100px;
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255, .6);
+`
+
+export const H2TitleBussines = styled.h2`
+    font-size: 30px;
+    display: flex;
+    color: #060606;
+    text-align: center;
 
 `
 export const H3SubtitelBusiness = styled.h3`
     display: flex;
     font-size: 25px;
-    color: white;
+    color: #060606;
 `
 export const WrapperLogoCenter = styled.div`
     display: flex;
@@ -96,8 +108,7 @@ export const WrapperFooterFrame = styled.ul`
 export const WrapFooterElements = styled.div`
     display: flex;
     width: 80%;
-    margin-top: 10px;
-    justify-content: space-between;
+    justify-content: space-around;
     position: fixed;
     padding: 10px;
 

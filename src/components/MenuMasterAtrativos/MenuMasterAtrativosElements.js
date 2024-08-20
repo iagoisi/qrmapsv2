@@ -54,8 +54,8 @@ export const ContentLi = styled.div`
     justify-content: space-between;
 `
 export const ImgLi = styled.img`
-    width: 12%;
-    margin-right: -10px;
+    max-width: 60px;
+    margin-right: 10px;
 `
 export const H3Li = styled.h3`
     width: 65%;
@@ -66,12 +66,13 @@ export const H3Li = styled.h3`
 export const ButtonLi = styled.div`
     width: 40px;
     height: 40px;
-    background: #5EA4FF;
+    // background: #5EA4FF;
     border-radius: 10px;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
+
 `
 export const ImgButton = styled.img`
     width: 30%;
@@ -93,7 +94,7 @@ export const WrapperDiv = styled.div`
 
 export const DivBusiness = styled.div`
     display: flex;
-    width: 90%;
+    width: 100%;
     height: 100%;
     align-self: center;
     justify-content: center;
@@ -112,23 +113,71 @@ export const WrapperList = styled.div`
 export const LiDataItem = styled(LinkR)`
     display: flex;
     width: 48%;
-    height: 200px;
+    height: 300px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     border-radius: 10px;
-    background: red;
     align-items: center;
     margin: 10px 2px;
+    padding-bottom: 10px;
     cursor: pointer;
+    text-decoration: none;
+`
+
+export const WrapperLogo = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255, .8);
+    padding: 15px;
+    // border-radius: 100px;
+
 `
 
 export const ImgLogoItem = styled.img`
     display: flex;
-    width: 80%;
+    width: 50%;
+    display: flex;
 `
 
 export const H3Name = styled.h3`
     font-size: 1rem;
-    color: white;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+
     
+`
+
+export const UlDataItemListSimpleBusiness = styled.ul`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    `
+    
+    export const WrapContentList = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+`
+
+
+
+export const H3TitleOutros = styled.h3`
+    font-size: 2rem;
+    margin-top: 30px;
+`
+
+
+export const LiItemSimpleBusiness= styled.li`
+    display: flex;
+    background: white;
+    margin: 10px 0;
+`
+
+export const H3ItemSimpleBusiness = styled(LinkR)`
+    text-align: left;
+    font-size: 1.2rem;
+    color: #010101;
 `

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import MenuMasterCity from '../MenuMasterCity';
 import MenuMasterAtrativos from '../MenuMasterAtrativos';
@@ -22,16 +22,33 @@ import {
     WrapperMasterMenu
  } from './TabMenuElements';
 
+ const getLocalActiveTab = () => {
+    let activeTab = localStorage.getItem('STATE_ACTIVE_TAB_MASTER');
+    console.log('STATE_ACTIVE_TAB_MASTER');
+
+    if (activeTab) {
+        return JSON.parse(localStorage.getItem('STATE_ACTIVE_TAB_MASTER'))
+    } else {
+        return 1;
+    }
+ }
+
 const TabMenu = () => {
-    const [ activeTab, setActiveTab ] = useState("tab1");
+    const [ activeTab, setActiveTab ] = useState(getLocalActiveTab());
 
     const handleTab1 = () => {
-        setActiveTab("tab1");
+        setActiveTab(1);
       };
     
       const handleTab2 = () => {
-        setActiveTab("tab2");
+        setActiveTab(2);
       };
+
+      useEffect(() => {
+        localStorage.setItem('STATE_ACTIVE_TAB_MASTER', activeTab)
+        console.log(activeTab)
+    }, [ activeTab ])
+
 
   return (
     <>
@@ -39,7 +56,7 @@ const TabMenu = () => {
         <WrapperTabMenu>
             
             <TabButton1 
-                className={activeTab === 'tab1' ? 'active' : ""}
+                className={activeTab === 1 ? 'active' : ""}
                 onClick={handleTab1}
                 >
                 <ContentButton>
@@ -53,7 +70,7 @@ const TabMenu = () => {
                 <Separador></Separador>
             </WrapperSeparador>
             <TabButton2 
-                className={activeTab === 'tab2' ? 'active' : ""}
+                className={activeTab === 2 ? 'active' : ""}
                 onClick={handleTab2}
                 >
                 <ContentButton>
@@ -64,7 +81,7 @@ const TabMenu = () => {
 
         </WrapperTabMenu>
         <WrapperMasterMenu>
-            {activeTab === "tab1" ? <MenuMasterCity /> : <MenuMasterAtrativos />}
+            {activeTab === 1 ? <MenuMasterCity /> : <MenuMasterAtrativos />}
         </WrapperMasterMenu>
     </Container>
     </>

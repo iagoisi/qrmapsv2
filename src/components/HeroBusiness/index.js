@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 import ImgBackButtonPNG from '../../images/arrow_back_button.png';
 
@@ -13,16 +13,21 @@ import {
     WrapperButtonBack,
     BackButton,
     ImgBackButton,
+    WrapperName,
     H2TitleBussines,
     H3SubtitelBusiness,
     WrapperLogoCenter,
     WrapLogo,
-    Logo,
+    // Logo,
     WrapperFooterFrame,
     WrapFooterElements,
     ElementsFooterFrame,
     IconFooter
  } from './HeroBusinessElements';
+
+
+
+ 
 
 const HeroBusiness = ({
     name, 
@@ -34,12 +39,6 @@ const HeroBusiness = ({
     iconButton2, 
     iconButton3
 }) => {
-    let navigate = useNavigate();
-
-    const goBack = () => {
-		navigate(-1);
-    }
-
   return (
     <>
         <Container>
@@ -53,31 +52,35 @@ const HeroBusiness = ({
             >
                 <TopFrame>
                     <WrapperButtonBack>
-                        <BackButton>
-                            <ImgBackButton onClick={goBack} src={ImgBackButtonPNG} />
+                        <BackButton to='/master'>
+                            <ImgBackButton src={ImgBackButtonPNG} />
                         </BackButton>
                     </WrapperButtonBack>
-                    <H2TitleBussines>{name}</H2TitleBussines>
-                    <H3SubtitelBusiness>{sobrenome}</H3SubtitelBusiness>
+                    <WrapperName>
+                        <H2TitleBussines>{name}</H2TitleBussines>
+                        <H3SubtitelBusiness>{sobrenome}</H3SubtitelBusiness>
+                    </WrapperName>
                 </TopFrame>
                 <WrapperLogoCenter>
                     <WrapLogo>
-                        <Logo src={logo} />
+                        {/* <Logo src={logo} /> */}
                     </WrapLogo>
                 </WrapperLogoCenter>
                 <WrapperFooterFrame>
                     <WrapFooterElements>
-                        <ElementsFooterFrame target='blank' to={link1}>
+
+                        {link1.value !== "" && (<ElementsFooterFrame target='blank' to={link1}>
                             <IconFooter src={iconButton1}/>
-                        </ElementsFooterFrame>
+                        </ElementsFooterFrame>)}
 
-                        <ElementsFooterFrame target='blank' to={link2}>
+                        {link2 !== '' && (<ElementsFooterFrame target='blank' to={link2}>
                             <IconFooter src={iconButton2}/>
-                        </ElementsFooterFrame>
+                        </ElementsFooterFrame>)}
 
-                        <ElementsFooterFrame target='blank' to={link3} >
+
+                        {link3.value !== '' && (<ElementsFooterFrame target='blank' to={link3}>
                             <IconFooter src={iconButton3}/>
-                        </ElementsFooterFrame>
+                        </ElementsFooterFrame>)}
                     </WrapFooterElements>
                 </WrapperFooterFrame>
             </WrapperFrame>
